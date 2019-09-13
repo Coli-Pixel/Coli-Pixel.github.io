@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Yoseph</title>
+    <title>Game</title>
+    <style>
+        .navbar{
+            background-color: goldenrod;
+            overflow: hidden;
+        }
+                .navbar a{
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+            padding:15px;
+            float:left;
+        }
+        .morelinks{
+            color: white;
+            font-size: 25px;
+            text-decoration: none;
+            padding:15px;
+        }
+        .navbar a:hover, .morelinks:hover{
+            background-color:Lightblue;
+        }
+        .dropdown:hover .dropdown-content{
+            display:block;
+        }
+        .dropdown-content{
+            position: absolute;
+            z-index: 2;
+            display: none;
+        }
+        .dropdown{
+            background-color:lightgreen;
+            color: white;
+            float: left;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        .dropdown-content a{
+            float: none;
+            display: block;
+            padding-left: 41.5px;
+            padding-right: 41.5px;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Jericho</h1>
-    <p>Seraphim</p>
+    <div class="navbar">
+        <a href="https://www.yahoo.com">Yahoo</a>
+        <a href="https://www.google.com">Google</a>
+        <div class="dropdown">
+            <div class="morelinks">
+                More Links:
+            </div>
+            <div class="dropdown-content">
+                <a href="https://www.bing.com">Bing</a>
+                <a href="https://www.serebii.net">Serebii</a>
+                <a href="https://pokemonshowdown.com">Showdown</a>
+            </div>
+        </div>
+    </div>
+
+    <h1>CQ</h1>
+    <p>Elard</p>
+    <p>Kalard</p>    
 </body>
 </html>
