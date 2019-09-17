@@ -1,0 +1,40 @@
+            .navbar{
+                list-style: none;
+                background-color: black;
+                overflow: hidden;
+                padding: 0;
+            }
+            .navbar a, .dropdown div{
+                text-decoration: none;
+                color: white;
+                font-size: 25px;
+                padding:16px;
+                display:inline-block;
+            }
+            .navbar li{
+                float: left;
+            }
+            .navbar li:hover{
+                background-color:goldenrod;
+            }
+            .dropdown-content{
+                list-style:none;
+                display: none;
+                padding:0;
+                position:absolute;
+                z-index: 2;
+                background-color: goldenrod;
+            }
+            .dropdown-content li{
+                float:none;
+                padding: 0;
+            }
+            .dropdown-content li:hover{
+                background-color:red;
+            }
+            .dropdown:hover .dropdown-content{
+                display:block;
+            }
+            .active{
+                background-color: green;
+            }
