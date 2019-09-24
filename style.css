@@ -38,3 +38,7 @@
             .active{
                 background-color: green;
             }
+            p {
+                font-size: 12px;
+                font-family: "Arial";
+            }
