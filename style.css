@@ -42,3 +42,12 @@
                 font-size: 12px;
                 font-family: "Arial";
             }
+            .first-pic {
+                text-align: left;
+            }
+            .second-pic {
+                text-align: center;
+            }
+            .third-pic {
+                text-align: right;
+            }
