@@ -30,7 +30,7 @@
                 padding: 0;
             }
             .dropdown-content li:hover{
-                background-color: lightcyan;
+                background-color: dodgerblue;
             }
             .dropdown:hover .dropdown-content{
                 display:block;
