@@ -45,3 +45,6 @@
             .borderstyle{
                 border-style: ridge;
             }
+            .wallpaper{
+                background-image: url("the-sun.png");
+            }
