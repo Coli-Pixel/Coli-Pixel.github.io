@@ -3,6 +3,32 @@
     <head>
         <title>Project #1</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+
+        <style>
+            #container{
+                position: absolute;
+                top: 65px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                background-color:green;
+            }
+            #leftpane{
+            width: 56%;
+            height: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: yellow;
+            }
+            #rightpane{
+            width: 44%;
+            height: 100%;
+            float: left;
+            background-color: blue;
+            }
+        </style>
     </head>
     <body class="wallpaper">
         <ul class="navbar">
@@ -19,6 +45,13 @@
             <li><a href="about-me.html">About Me</a></li>
             <li><a href="contact-me.html">Contact Me</a></li>
         </ul>
-        <h1>Text Adventure</h1>
+        <div id='container'>
+            <div id='leftpane'>
+
+            </div>
+            <div id='rightpane'>
+
+            </div>
+        </div>
     </body>
 </html>
