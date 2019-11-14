@@ -34,10 +34,8 @@
                 top: 0px;
                 left: 56%;
                 right: 0px;
-                display: flex;
-                align-items:center;
                 justify-content: center;
-                background-color: red;
+                background-color: honeydew;
             }
             #brpane{
                 position: absolute;
@@ -50,45 +48,23 @@
                 justify-content: center;
                 background-color: yellow;
             }
-            #b1{
+            #b1, #b2, #b3, #b4{
                 display: inline-block;
                 background-color: honeydew;
                 color: black;
                 font-size: 16px;
-                padding: 10px;
+                padding: 4px;
                 border-radius: 8px;
                 text-decoration: none;
                 margin: 8px;
             }
-            #b2{
-                display: inline-block;
-                background-color: honeydew;
-                color: black;
-                font-size: 16px;
-                padding: 10px;
-                border-radius: 8px;
-                text-decoration: none;
-                margin: 8px;
+            #ptext1, #ptext2, #ptext3, #ptext4{
+                padding: 8px;
             }
-            #b3{
-                display: inline-block;
-                background-color: honeydew;
-                color: black;
-                font-size: 16px;
-                padding: 10px;
-                border-radius: 8px;
-                text-decoration: none;
-                margin: 8px;
-            }
-            #b4{
-                display: inline-block;
-                background-color: honeydew;
-                color: black;
-                font-size: 16px;
-                padding: 10px;
-                border-radius: 8px;
-                text-decoration: none;
-                margin: 8px;
+            #storyimg{
+                max-height:100%;
+                max-width: 100%;
+                width:100%;
             }
         </style>
     </head>
@@ -109,11 +85,14 @@
         </ul>
         <div id='container'>
             <div id='leftpane'>
-
+                <img id='storyimg' src="images/rust.jpg">
             </div>
             <div id='rightpane'>
                 <div id='trpane'>
-                    CHI
+                    <p id= 'ptext1'>ewqr</p>
+                    <p id= 'ptext2'>rgbrjg</p>
+                    <p id= 'ptext3'>d</p>
+                    <p id= 'ptext4'>d</p>
                 </div>
                 <div id='brpane'>
                     <a id='b1' href="#"> Choice 1</a>
@@ -123,5 +102,31 @@
                 </div>
             </div>
         </div>
+        <script>
+            var pic = document.getElementById('storyimg');
+            var ptext1 = document.getElementById('ptext1');
+            var ptext2 = document.getElementById('ptext2');
+            var ptext3= document.getElementById('ptext3');
+            var ptext4 = document.getElementById('ptext4');
+            var b1 = document.getElementById('b1');
+            var b2 = document.getElementById('b2');
+            var b3 = document.getElementById('b3');
+            var b4 = document.getElementById('b4');
+            var state = "intro";
+
+            function intro(){
+                pic.src = "images/le-sun.png";
+                ptext1.innerHTML("This is the intro to my story");
+                ptext2.innerHTML("");
+                ptext3.innerHTML("");
+                ptext4.innerHTML("");
+                b1.innerHTML("Yes");
+                b2.innerHTML("No");
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+        </script>
     </body>
 </html>
