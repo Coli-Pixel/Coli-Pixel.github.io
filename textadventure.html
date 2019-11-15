@@ -89,16 +89,16 @@
             </div>
             <div id='rightpane'>
                 <div id='trpane'>
-                    <p id= 'ptext1'>ewqr</p>
-                    <p id= 'ptext2'>rgbrjg</p>
-                    <p id= 'ptext3'>d</p>
-                    <p id= 'ptext4'>d</p>
+                    <p id= 'ptext1'>___</p>
+                    <p id= 'ptext2'>_____</p>
+                    <p id= 'ptext3'>_____</p>
+                    <p id= 'ptext4'>_____</p>
                 </div>
                 <div id='brpane'>
-                    <a id='b1' href="#"> Choice 1</a>
-                    <a id='b2' href="#"> Choice 2 </a>
-                    <a id='b3' href="#"> Choice 3 </a>
-                    <a id='b4' href="#"> Choice 4 </a>
+                    <a id='b1' onclick="bclick(1)" href="#"> Choice 1</a>
+                    <a id='b2' onclick="bclick(2)" href="#"> Choice 2 </a>
+                    <a id='b3' onclick="bclick(3)" href="#"> Choice 3 </a>
+                    <a id='b4' onclick="bclick(4)" href="#"> Choice 4 </a>
                 </div>
             </div>
         </div>
@@ -113,19 +113,80 @@
             var b3 = document.getElementById('b3');
             var b4 = document.getElementById('b4');
             var state = "intro";
-
+            intro();
             function intro(){
                 pic.src = "images/le-sun.png";
-                ptext1.innerHTML("This is the intro to my story");
-                ptext2.innerHTML("");
-                ptext3.innerHTML("");
-                ptext4.innerHTML("");
-                b1.innerHTML("Yes");
-                b2.innerHTML("No");
+                ptext1.innerHTML = "Gerard is a 36 year old man living in his mum’s wooden shack of a cottage in the empty serfdom fields of Lord Josiah the 12th’s barley field in northern England.";
+                ptext2.innerHTML = "Does Gerard stop being a deadbeat and wake up or does he just lay in bed?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML ="Get Up";
+                b2.innerHTML ="Lay in Bed";
                 b1.style.display = "block";
                 b2.style.display = "block";
                 b3.style.display = "none";
                 b4.style.display = "none";
+            }
+            function end1(){
+                 pic.src = "images/crack.jpg";
+                ptext1.innerHTML = "Gerard has awoken and has stepped on  crack breaking his mother's back.";
+                ptext2.innerHTML = "He must venture to the castle of the Time Wizard and must obtain the Boots of Slight Muffling.";
+                ptext3.innerHTML = "Will he go down stairs to meet the Shoe Goblin living in his basement?";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Grab A Fork and Venture Down";
+                b2.innerHTML = "Do Nothing";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function scene1(){
+               pic.src = "images/crack.jpg";
+                ptext1.innerHTML = "Gerard has awoken and has stepped on  crack breaking his mother's back.";
+                ptext2.innerHTML = "He must venture to the castle of the Time Wizard and must obtain the Boots of Slight Muffling.";
+                ptext3.innerHTML = "Will he go down stairs to meet the Shoe Goblin living in his basement?";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Grab A Fork and Venture Down";
+                b2.innerHTML = "Do Nothing";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function grabFork(){
+               pic.src = "images/rust.jpg";
+                ptext1.innerHTML = "Gerard goes down to his mum's basement and meets the Shoe Goblin.";
+                ptext2.innerHTML = "He learns that the fork that he grabbed was truly The Holy Rusted Fork of Legends.";
+                ptext3.innerHTML = "He tries to barter with the Shoe Goblin for the Boots of Slight Muffling, but Gerard is poor so he would have to sell his left hand.";
+                ptext4.innerHTML = "Will Gerard slay the Shoe Goblin or sell his left hand?";
+                b1.innerHTML = "Slay the Goblin";
+                b2.innerHTML = "Sell Hand";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function bclick(button){
+                if (state == "intro"){
+                    if (button == 1){
+                        scene1();
+                        state = "scene1";
+                    }
+                    else if (button == 2){
+                        //send to other location     
+                    }
+                }
+                else if (state == "scene1"){
+                    if (button == 1){
+                        grabFork();
+                        state = "grabFork";
+                    }
+                    else if (button == 2){
+                        invaded();
+                        state = "invaded";
+                    }
+                }
+                return false;
             }
         </script>
     </body>
