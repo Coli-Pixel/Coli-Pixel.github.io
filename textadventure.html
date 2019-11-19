@@ -142,8 +142,8 @@
             }
             function scene1(){
                pic.src = "images/crack.jpg";
-                ptext1.innerHTML = "Gerard has awoken and has stepped on  crack breaking his mother's back.";
-                ptext2.innerHTML = "He must venture to the castle of the Time Wizard and must obtain the Boots of Slight Muffling.";
+                ptext1.innerHTML = "Gerard has awoken and has stepped on crack breaking his mum's back. Gerard now must obtain the Brace of Backenning from the Time Wizard to save his mum.";
+                ptext2.innerHTML = "He needs venture to the castle of the Time Wizard, but first obtain the Boots of Slight Muffling to defeat the Time Wizard.";
                 ptext3.innerHTML = "Will he go down stairs to meet the Shoe Goblin living in his basement?";
                 ptext4.innerHTML = "";
                 b1.innerHTML = "Grab A Fork and Venture Down";
@@ -153,16 +153,15 @@
                 b3.style.display = "none";
                 b4.style.display = "none";
             }
-            function scene1(){
+            function invaded(){
                pic.src = "images/shoegob.jpg";
                 ptext1.innerHTML = "Gerard does nothing and the Shoe Goblin emerges from his mum's basement.";
                 ptext2.innerHTML = "The Shoe Goblin invades and slays Gerard and his mum.";
                 ptext3.innerHTML = "";
                 ptext4.innerHTML = "";
-                b1.innerHTML = "Grab A Fork and Venture Down";
-                b2.innerHTML = "Do Nothing";
+                b1.innerHTML = "Turn Back The Hands of Time?";
                 b1.style.display = "block";
-                b2.style.display = "block";
+                b2.style.display = "none";
                 b3.style.display = "none";
                 b4.style.display = "none";
             }
@@ -193,7 +192,7 @@
                 b4.style.display = "none";
             }
             function sceneLe(){
-               pic.src = "images/lefhand.png";
+               pic.src = "images/bottle.jpg";
                 ptext1.innerHTML = "Gerard obtains the Boots of Slight Muffling in exchange for his left hand.";
                 ptext2.innerHTML = "Gerard proceeds across the Mild Midwestern Plains and is approached a by a lesser rude salesman! Should Gerard strike a deal with him?";
                 ptext3.innerHTML = "";
@@ -205,6 +204,83 @@
                 b3.style.display = "none";
                 b4.style.display = "none";
             }
+            
+            function cheapskate(){
+               pic.src = "images/poverty.jpg";
+                ptext1.innerHTML = "Gerard doesn't make a deal with the lesser rude salesman because he is a poor serf and can't afford anything.";
+                ptext2.innerHTML = "Gerard continues through the Mild Midwestern Plains.";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Continue";
+                b1.style.display = "block";
+                b2.style.display = "none";
+                b3.style.display = "none";
+                b4.style.display = "none";    
+            }
+            function righthand(){
+               pic.src = "images/mfsoews.png";
+                ptext1.innerHTML = "Gerard obtains the Mythical Fly Swatter of Enhanced Wrist Strength.";
+                ptext2.innerHTML = "Gerard continues through the Mild Midwestern Plains.";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Continue";
+                b1.style.display = "block";
+                b2.style.display = "none";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function scene3a(){
+                pic.src = "images/ppp.jpg";
+                ptext1.innerHTML = "Gerard continues on in the Mild Midwester Plains and encounters a swarm of Pocket Pinching Pixies.";
+                ptext2.innerHTML = "Should Gerard run or fight?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Run";
+                b2.innerHTML = "Fight";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function scene3b(){
+                pic.src = "images/ppp.jpg";
+                ptext1.innerHTML = "Gerard continues on in the Mild Midwester Plains and encounters a swarm of Pocket Pinching Pixies.";
+                ptext2.innerHTML = "Should Gerard run or fight?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Run";
+                b2.innerHTML = "Fight";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function scene3b(){
+                pic.src = "images/ppp.jpg";
+                ptext1.innerHTML = "Gerard continues on in the Mild Midwester Plains and encounters a swarm of Pocket Pinching Pixies.";
+                ptext2.innerHTML = "Should Gerard run or fight?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Run";
+                b2.innerHTML = "Fight";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function perish(){
+                pic.src = "images/pxwarr.jpg";
+                ptext1.innerHTML = "After fighting long and hard with the Pocket Pinching Pixies, Gerard eventually falls in battle.";
+                ptext2.innerHTML = "";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Turn Back The Hands of Time?";
+                b1.style.display = "block";
+                b2.style.display = "none";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+
             function bclick(button){
                 if (state == "intro"){
                     if (button == 1){
@@ -232,6 +308,12 @@
                         state = "invaded";
                     }
                 }
+                else if (state == "invaded"){
+                    if (button == 1){
+                        intro();
+                        state = "intro";
+                    }
+                }
                 else if (state == "grabFork"){
                     if (button == 1){
                         sceneLe();
@@ -240,6 +322,45 @@
                     else if (button == 2){
                         sceneSlay();
                         state = "sceneSlay";
+                    }
+                }
+                else if (state == "sceneLe"){
+                    if (button == 1){
+                        righthand();
+                        state = "righthand";
+                    }
+                    else if (button == 2){
+                        cheapskate();
+                        state = "cheapskate";
+                    }
+                }
+                else if (state == "sceneSlay"){
+                    if (button == 1){
+                        righthand();
+                        state = "righthand";
+                    }
+                    else if (button == 2){
+                        cheapskate();
+                        state = "cheapskate";
+                    }
+                }
+                else if (state == "righthand"){
+                    if (button == 1){
+                        scene3a();
+                        state = "scene3a";
+                    }
+                }
+                else if (state == "cheapskate"){
+                    if (button == 1){
+                        scene3b();
+                        state = "scene3b";
+                    }
+                }
+                
+                else if (state == "perish"){
+                    if (button ==1){
+                        intro();
+                        state = "intro";
                     }
                 }
                 return false;
