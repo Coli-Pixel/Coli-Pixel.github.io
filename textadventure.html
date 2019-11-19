@@ -114,6 +114,7 @@
             var b4 = document.getElementById('b4');
             var state = "intro";
             intro();
+
             function intro(){
                 pic.src = "images/le-sun.png";
                 ptext1.innerHTML = "Gerard is a 36 year old man living in his mum’s wooden shack of a cottage in the empty serfdom fields of Lord Josiah the 12th’s barley field in northern England.";
@@ -128,15 +129,14 @@
                 b4.style.display = "none";
             }
             function end1(){
-                 pic.src = "images/crack.jpg";
-                ptext1.innerHTML = "Gerard has awoken and has stepped on  crack breaking his mother's back.";
-                ptext2.innerHTML = "He must venture to the castle of the Time Wizard and must obtain the Boots of Slight Muffling.";
-                ptext3.innerHTML = "Will he go down stairs to meet the Shoe Goblin living in his basement?";
+                 pic.src = "images/skelly.jpg";
+                ptext1.innerHTML = "Gerard sleeps his days away until his bones are found by modern day archaeologists still in his bed.";
+                ptext2.innerHTML = "";
+                ptext3.innerHTML = "";
                 ptext4.innerHTML = "";
-                b1.innerHTML = "Grab A Fork and Venture Down";
-                b2.innerHTML = "Do Nothing";
+                b1.innerHTML = "Turn The Hands of Time Back";
                 b1.style.display = "block";
-                b2.style.display = "block";
+                b2.style.display = "none";
                 b3.style.display = "none";
                 b4.style.display = "none";
             }
@@ -153,14 +153,53 @@
                 b3.style.display = "none";
                 b4.style.display = "none";
             }
+            function scene1(){
+               pic.src = "images/shoegob.jpg";
+                ptext1.innerHTML = "Gerard does nothing and the Shoe Goblin emerges from his mum's basement.";
+                ptext2.innerHTML = "The Shoe Goblin invades and slays Gerard and his mum.";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Grab A Fork and Venture Down";
+                b2.innerHTML = "Do Nothing";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
             function grabFork(){
                pic.src = "images/rust.jpg";
                 ptext1.innerHTML = "Gerard goes down to his mum's basement and meets the Shoe Goblin.";
                 ptext2.innerHTML = "He learns that the fork that he grabbed was truly The Holy Rusted Fork of Legends.";
                 ptext3.innerHTML = "He tries to barter with the Shoe Goblin for the Boots of Slight Muffling, but Gerard is poor so he would have to sell his left hand.";
                 ptext4.innerHTML = "Will Gerard slay the Shoe Goblin or sell his left hand?";
-                b1.innerHTML = "Slay the Goblin";
-                b2.innerHTML = "Sell Hand";
+                b1.innerHTML = "Sell Hand";
+                b2.innerHTML = "Slay Shoe Goblin";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function sceneSlay(){
+               pic.src = "images/bottle.jpg";
+                ptext1.innerHTML = "Gerard obtains the Boots of Slight Muffling by stabbing the Shoe Goblin with the Holy Rusted Fork of Legends, which was laced with tetanus and the bubonic plague, instantly killing the Shoe Goblin.";
+                ptext2.innerHTML = "Gerard proceeds towards the Mild Midwestern Plains and is approached by a lesser rude salesman! Should Gerard strike a deal with him?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Yes";
+                b2.innerHTML = "No";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function sceneLe(){
+               pic.src = "images/lefhand.png";
+                ptext1.innerHTML = "Gerard obtains the Boots of Slight Muffling in exchange for his left hand.";
+                ptext2.innerHTML = "Gerard proceeds across the Mild Midwestern Plains and is approached a by a lesser rude salesman! Should Gerard strike a deal with him?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Yes";
+                b2.innerHTML = "No";
                 b1.style.display = "block";
                 b2.style.display = "block";
                 b3.style.display = "none";
@@ -173,7 +212,14 @@
                         state = "scene1";
                     }
                     else if (button == 2){
-                        //send to other location     
+                        end1();
+                        state = "end1";     
+                    }
+                }
+                else if (state == "end1"){
+                    if (button ==1){
+                        intro();
+                        state = "intro";
                     }
                 }
                 else if (state == "scene1"){
@@ -184,6 +230,16 @@
                     else if (button == 2){
                         invaded();
                         state = "invaded";
+                    }
+                }
+                else if (state == "grabFork"){
+                    if (button == 1){
+                        sceneLe();
+                        state = "sceneLe";
+                    }
+                    else if (button == 2){
+                        sceneSlay();
+                        state = "sceneSlay";
                     }
                 }
                 return false;
