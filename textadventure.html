@@ -134,7 +134,7 @@
                 ptext2.innerHTML = "";
                 ptext3.innerHTML = "";
                 ptext4.innerHTML = "";
-                b1.innerHTML = "Turn The Hands of Time Back?";
+                b1.innerHTML = "Turn Back The Hands of Time?";
                 b1.style.display = "block";
                 b2.style.display = "none";
                 b3.style.display = "none";
@@ -307,10 +307,47 @@
             function deal(){
                  pic.src = "images/guard.jpg";
                 ptext1.innerHTML = "After ending his rampage, Gerard makes a deal with the King of the Pixie and the King steals the keys from the guard standing in front of the Time Travelling Wizard's Castle.";
-                ptext2.innerHTML = "You run in while the guard needs to use the Bowl of Excrement.";
+                ptext2.innerHTML = "Gerard runs in while the guard needs to use the Bowl of Excrement.";
                 ptext3.innerHTML = "";
                 ptext4.innerHTML = "";
                 b1.innerHTML = "Continue";
+                b1.style.display = "block";
+                b2.style.display = "none";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function castle(){
+                pic.src = "images/gandalf.jpg";
+                ptext1.innerHTML = "After sneaking into the castle, Gerard spots the Brace of Backenning while the Wizard is taking a shower as the Wizard shouts, 'ALEXA PLAY DESPACITO 2!'.";
+                ptext2.innerHTML = "Should Gerard take the Brace of Backenning and Run or Slay the Time Travelling Wizard in the shower?";
+                ptext3.innerHTML = "";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Run";
+                b2.innerHTML = "Kill";
+                b1.style.display = "block";
+                b2.style.display = "block";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function fate1(){
+                pic.src = "images/edge.jpg";
+                ptext1.innerHTML = "Whilst Gerard runs from the Time Travelling Wizard, the Wizard slows Gerard's movements as he sprints after him. The Wizard is soon after casting the spell succumbs to a 20 year hernia which was suppressed with the Brace of Backenning.";
+                ptext2.innerHTML = "After the spell of slowed movements wore off, it had been 2 years after Gerard started his quest. He finally returns home only to find out his mum left the country with a Chinese back masseuse to China. Gerard, with his quest amounting to nothing, travels his world, unfortunately for him this world is indeed flat, only to fall off the edge into the endless abyss of space.";
+                ptext3.innerHTML = "Gerard's mum, however, lived a happy life with her lover, the Chinese back masseuse who had cured her of her broken back.";
+                ptext4.innerHTML = "The End";
+                b1.innerHTML = "Turn Back The Hands of Time?";
+                b1.style.display = "block";
+                b2.style.display = "none";
+                b3.style.display = "none";
+                b4.style.display = "none";
+            }
+            function fate2(){
+                pic.src = "images/brace.jpg";
+                ptext1.innerHTML = "Gerard slays the Time Wizard whilst he showers to take the Brace of Backenning and to punish the Wizard for his taste in music. Gerard returns home to give his mum the Brace of Backenning.";
+                ptext2.innerHTML = "He soon learns that his mother has been going out with a Chinese masseuse and the masseuse brings the serf family with her back to China.";
+                ptext3.innerHTML = "The End";
+                ptext4.innerHTML = "";
+                b1.innerHTML = "Turn Back The Hands of Time?";
                 b1.style.display = "block";
                 b2.style.display = "none";
                 b3.style.display = "none";
@@ -432,6 +469,40 @@
                     else if (button == 2){
                         kingatk();
                         state = "kingatk";
+                    }
+                }
+                else if (state == "kingatk"){
+                    if (button == 1){
+                        intro();
+                        state = "intro";
+                    }
+                }
+                 else if (state == "deal" ){
+                    if (button == 1){
+                        castle();
+                        state = "castle";
+                    }
+                }
+                else if (state == "castle"){
+                    if (button == 1){
+                        fate1();
+                        state = "fate1";
+                    }
+                    else if (button == 2){
+                        fate2();
+                        state = "fate2"
+                    }
+                }
+                else if (state == "fate1"){
+                    if (button == 1){
+                        intro();
+                        state = "intro";
+                    }
+                }
+                else if (state == "fate2"){
+                    if (button == 1){
+                        intro();
+                        state = "intro";
                     }
                 }
                 return false;
